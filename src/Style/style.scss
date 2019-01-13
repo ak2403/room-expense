@@ -125,3 +125,80 @@ body{
         }
     }
 }
+.groups-details-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    .groups-details-header{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .back-anchor{
+            background: #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin-right: 20px;
+        }
+        .group-title{
+            font-size: 24px;
+        }
+    }
+    .groups-content-container{
+        display: flex;
+        flex: 1;
+        padding-top: 20px;
+        .group-content{
+            background-color: #fff;
+            border-radius: 5px;
+            flex: 2;
+        }
+        .group-members{
+            background-color: #fff;
+            border-radius: 5px;
+            flex: 1;
+            .group-member{
+                margin: 10px 0;
+                p{
+                    margin: 0;
+                    color: #828282;
+                    font-size: 12px;
+                }
+            }
+            .add{
+                margin-top: 20px;
+                background: #e0e0e0;
+                width: 15px;
+                height: 15px;
+                padding: 8px;
+                border-radius: 20px;
+                text-align: center;
+            }
+            .filtered-members{
+                width: 300px;
+                max-height: 100px;
+                overflow: auto;
+                border: 1px solid #e0e0e0;
+                border-radius: 5px;
+                .filtered-member{
+                    padding: 10px 15px;
+                    border-color: #e0e0e0;
+                    border-style: solid;
+                    border-width: 0 0 1px 0;
+                    cursor: pointer;
+                    span{
+                        font-size: 13px;
+                    }
+                    p{
+                        margin: 0;
+                        color: #828282;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

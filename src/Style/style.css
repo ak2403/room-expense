@@ -104,3 +104,67 @@ body {
         flex-direction: column;
         justify-content: space-around;
         margin-left: auto; }
+
+.groups-details-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+  .groups-details-container .groups-details-header {
+    width: 100%;
+    display: flex;
+    align-items: center; }
+    .groups-details-container .groups-details-header .back-anchor {
+      background: #e0e0e0;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      line-height: 40px;
+      text-align: center;
+      margin-right: 20px; }
+    .groups-details-container .groups-details-header .group-title {
+      font-size: 24px; }
+  .groups-details-container .groups-content-container {
+    display: flex;
+    flex: 1;
+    padding-top: 20px; }
+    .groups-details-container .groups-content-container .group-content {
+      background-color: #fff;
+      border-radius: 5px;
+      flex: 2; }
+    .groups-details-container .groups-content-container .group-members {
+      background-color: #fff;
+      border-radius: 5px;
+      flex: 1; }
+      .groups-details-container .groups-content-container .group-members .group-member {
+        margin: 10px 0; }
+        .groups-details-container .groups-content-container .group-members .group-member p {
+          margin: 0;
+          color: #828282;
+          font-size: 12px; }
+      .groups-details-container .groups-content-container .group-members .add {
+        margin-top: 20px;
+        background: #e0e0e0;
+        width: 15px;
+        height: 15px;
+        padding: 8px;
+        border-radius: 20px;
+        text-align: center; }
+      .groups-details-container .groups-content-container .group-members .filtered-members {
+        width: 300px;
+        max-height: 100px;
+        overflow: auto;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px; }
+        .groups-details-container .groups-content-container .group-members .filtered-members .filtered-member {
+          padding: 10px 15px;
+          border-color: #e0e0e0;
+          border-style: solid;
+          border-width: 0 0 1px 0;
+          cursor: pointer; }
+          .groups-details-container .groups-content-container .group-members .filtered-members .filtered-member span {
+            font-size: 13px; }
+          .groups-details-container .groups-content-container .group-members .filtered-members .filtered-member p {
+            margin: 0;
+            color: #828282;
+            font-size: 12px; }

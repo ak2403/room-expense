@@ -51,3 +51,19 @@ export const addGroupsCall = data => {
             }
         })
 }
+
+export const addMemberCall = (projectID, userID) => {
+    return axios.post(`${configAPI.API_URL}/family/${projectID}/add-member/${userID}`)
+        .then(response => {
+            return {
+                status: 200,
+                data: response.data
+            }
+        })
+        .catch(err => {
+            return {
+                status: 400,
+                error_message: err.response.data
+            }
+        })
+}

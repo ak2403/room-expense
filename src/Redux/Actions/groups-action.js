@@ -41,6 +41,30 @@ export const getGroupDetail = id => {
     }
 }
 
+export const searchMembers = value => {
+    return async dispatch => {
+        let getResponse = await getAPI.searchMembersCall(value)
+        if (getResponse.status === 200) {
+            dispatch({
+                type: groupsTypes.GET_FILTERED_MEMBERS,
+                payload: getResponse.data
+            })
+        }
+    }
+}
+
+export const addMember = (projectID, userID) => {
+    return async dispatch => {
+        let getResponse = await postAPI.addMemberCall(projectID, userID)
+        if (getResponse.status === 200) {
+            dispatch({
+                type: groupsTypes.UPDATE_FAMILY_MEMBERS,
+                payload: getResponse.data
+            })
+        }
+    }
+}
+
 export const resetSettings = () => {
     return {
         type: groupsTypes.RESET_SETTINGS
