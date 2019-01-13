@@ -1,3 +1,5 @@
+$bg-color: #e8f2f9;
+
 body{
     padding: 0;
     margin: 0;
@@ -18,7 +20,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fafbfd;
+    background: $bg-color;
 }
 .container-center{
     width: 70%;
@@ -68,90 +70,58 @@ body{
             flex: 1;
             display: flex;
             flex-direction: column;
-            background: #fff;
             border-radius: 5px;
         }
     }
 }
-.content-header{
+
+.groups-container{
     width: 100%;
     display: flex;
     flex-direction: column;
-    h1{
-        padding: 0;
-        margin: 0;
-    }
-    .add-project{
-        // margin: 15px 0;
-    }
-}
-.content-elements{
-    width: 100%;
     flex: 1;
-    display: flex;
-    .table-layout{
-        position: relative;
+    .groups-header{
+        margin-bottom: 10px;
+    }
+    .groups-layout{
         width: 100%;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-}
-.project-list-container{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    .project-list{
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        margin: 15px 10px;
-        width: 250px;
-        height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .add-project{
-        cursor: pointer;
-        border-style: dashed;
         display: flex;
         flex-direction: column;
-        .icons{
-            margin-bottom: 15px;
-        }
-    }
-}
-.app-detail-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    .app-split-column{
-        width: 100%;
-        display: flex;
-        .app-detailed-layout{
-            width: 70%;
-        }
-        .app-status-layout{
-            display: flex;
-            
-        }
-    }
-}
-.app-panel-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    .panel-container{
-        width: 150px;
-    }
-    .panel-content-container{
-        display: flex;
         flex: 1;
-        margin: 0 10px;
-        border-radius: 5px;
-        background-color: #fff;
-    }    
+        .groups{
+            width: 90%;
+            min-height: 140px;
+            margin: 5px 0;
+            padding-left: 30px;
+            padding-right: 50px;
+            border-radius: 5px;
+            display: flex;
+            background-color: #fff;
+            .details-layout{
+                display: flex;
+                flex-direction: column;
+                span{
+                    font-size: 20px;
+                    padding-top: 15px;
+                    a{
+                        color: #000;
+                        text-decoration: none;
+                    }
+                }
+                ul{
+                    list-style: none;
+                    li{
+                        display: inline-block;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .options-layout{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                margin-left: auto;
+            }
+        }
+    }
 }

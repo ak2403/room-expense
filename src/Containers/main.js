@@ -8,6 +8,7 @@ import LoginForm from './Authentication/login-form';
 import SignUp from './Authentication/sign-up';
 import DashboardView from './Dashboard';
 import GroupsView from './Groups'
+import GroupDetails from './Groups/group-detail-view'
 import { retrieveCall } from '../Redux/Actions/authentication-actions';
 
 class MainRoute extends Component {
@@ -29,8 +30,9 @@ class MainRoute extends Component {
                         //Dashboard routes
                         <ProtectedRoute exact path='/dashboard' component={DashboardView} />
                         <ProtectedRoute exact path='/groups' component={GroupsView} />
+                        <ProtectedRoute exact path='/groups/:groupID' component={GroupDetails} />
 
-                        <Redirect to="/dashboard" />
+                        <Redirect to="/groups" />
                     </Switch>
                 </div>
             </BrowserRouter>

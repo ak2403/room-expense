@@ -7,7 +7,7 @@ import * as configAPI from '../../api/config';
 export const getGroups = () => {
     return async dispatch => {
         let getResponse = await getAPI.getGroupsCall()
-        if(getResponse.status === 200){
+        if (getResponse.status === 200) {
             dispatch({
                 type: groupsTypes.GET_GROUP,
                 payload: getResponse.data
@@ -19,11 +19,23 @@ export const getGroups = () => {
 export const addGroups = data => {
     return async dispatch => {
         let getResponse = await postAPI.addGroupsCall(data)
-        if(getResponse.status === 200){
+        if (getResponse.status === 200) {
             let getGroups = await getAPI.getGroupsCall()
             dispatch({
                 type: groupsTypes.ADDED_GROUP,
                 payload: getGroups.data
+            })
+        }
+    }
+}
+
+export const getGroupDetail = id => {
+    return async dispatch => {
+        let getResponse = await getAPI.getGroupDetailCall(id)
+        if (getResponse.status === 200) {
+            dispatch({
+                type: groupsTypes.GET_GROUP_DETAILS,
+                payload: getResponse.data
             })
         }
     }

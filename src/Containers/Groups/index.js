@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Modal from '../../Components/modal'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import Button from '../../Components/button'
 import GroupsList from './children/groups-view'
 import AddGroups from './modal/add-groups'
 import { resetSettings } from '../../Redux/Actions/groups-action'
@@ -27,13 +28,19 @@ class GroupsView extends Component {
 
     render() {
         let { addFamily } = this.state
-        let {groups_list}=this.props
-        
-        return (<div>
-            Groups
-            <button onClick={this.toggleModal}>Add Group</button>
+        let { groups_list } = this.props
+
+        return (<div className="groups-container">
+            <div className="groups-header">
+                <h3>Groups</h3>
+                <Button className="transparent-button" onClick={this.toggleModal} text="Add Group" />
+            </div>
+
+            <div className="groups-layout">
+                <GroupsList />
+            </div>
+
             {addFamily ? <Modal title="Add Group" content={<AddGroups />} closeModal={this.toggleModal} /> : ''}
-            <GroupsList />
         </div>)
     }
 }
