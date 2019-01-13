@@ -1,0 +1,134 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden; }
+
+#root {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.app-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafbfd; }
+
+.container-center {
+  width: 70%;
+  display: flex; }
+  .container-center .container-info {
+    flex: 1; }
+  .container-center .container-auth-form {
+    flex: 1.5; }
+    .container-center .container-auth-form .auth-forms {
+      width: 90%;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+    .container-center .container-auth-form .auth-options {
+      width: 100%;
+      text-align: center; }
+      .container-center .container-auth-form .auth-options a {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 13px;
+        color: #000; }
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex; }
+  .app-container .app-nav-container {
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px; }
+  .app-container .app-main-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1; }
+    .app-container .app-main-container .app-content-container {
+      width: 98%;
+      margin: 20px;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border-radius: 5px; }
+
+.content-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  .content-header h1 {
+    padding: 0;
+    margin: 0; }
+
+.content-elements {
+  width: 100%;
+  flex: 1;
+  display: flex; }
+  .content-elements .table-layout {
+    position: relative;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+
+.project-list-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  .project-list-container .project-list {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin: 15px 10px;
+    width: 250px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .project-list-container .add-project {
+    cursor: pointer;
+    border-style: dashed;
+    display: flex;
+    flex-direction: column; }
+    .project-list-container .add-project .icons {
+      margin-bottom: 15px; }
+
+.app-detail-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+  .app-detail-container .app-split-column {
+    width: 100%;
+    display: flex; }
+    .app-detail-container .app-split-column .app-detailed-layout {
+      width: 70%; }
+    .app-detail-container .app-split-column .app-status-layout {
+      display: flex; }
+
+.app-panel-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100%; }
+  .app-panel-container .panel-container {
+    width: 150px; }
+  .app-panel-container .panel-content-container {
+    display: flex;
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 5px;
+    background-color: #fff; }
