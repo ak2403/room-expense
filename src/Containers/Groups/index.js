@@ -1,22 +1,53 @@
 import React, { Component } from 'react'
 import Modal from '../../Components/modal'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import GroupsList from './children/groups-view'
 import AddGroups from './modal/add-groups'
+import { resetSettings } from '../../Redux/Actions/groups-action'
 
 class GroupsView extends Component {
     state = {
-        addFamily: true
+        addFamily: false
+    }
+
+    shouldComponentUpdate = nextProps => {
+        let { is_added_group } = nextProps
+
+        if (is_added_group) {
+            this.setState({
+                addFamily: false
+            })
+            this.props.resetSettings()
+        }
+        return true
     }
 
     toggleModal = () => this.setState({ addFamily: !this.state.addFamily })
 
     render() {
         let { addFamily } = this.state
+        let {groups_list}=this.props
+        
         return (<div>
             Groups
             <button onClick={this.toggleModal}>Add Group</button>
             {addFamily ? <Modal title="Add Group" content={<AddGroups />} closeModal={this.toggleModal} /> : ''}
+            <GroupsList />
         </div>)
     }
 }
 
-export default GroupsView
+const mapDispatchToProps = dispatch => bindActionCreators({
+    resetSettings
+}, dispatch)
+
+const mapStateToProps = props => {
+    let { groups } = props
+    return {
+        groups_list: groups.groups_list,
+        is_added_group: groups.is_added_group
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GroupsView)

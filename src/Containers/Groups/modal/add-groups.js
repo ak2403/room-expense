@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import Input from '../../../Components/input/text-input'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { addGroups } from '../../../Redux/Actions/groups-action'
 
 class AddGroups extends Component {
     state = {
@@ -8,7 +11,8 @@ class AddGroups extends Component {
             address: '',
             state: '',
             postcode: '',
-            rent: ''
+            rent: '',
+            roommates: []
         }
     }
 
@@ -22,6 +26,8 @@ class AddGroups extends Component {
 
     submitGroup = e => {
         e.preventDefault()
+        let { add_family } = this.state
+        this.props.addGroups(add_family)
     }
 
     render() {
@@ -50,4 +56,8 @@ class AddGroups extends Component {
     }
 }
 
-export default AddGroups
+const mapDispatchToProps = dispatch => bindActionCreators({
+    addGroups
+}, dispatch)
+
+export default connect(null, mapDispatchToProps)(AddGroups)

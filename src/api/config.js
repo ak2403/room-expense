@@ -5,7 +5,7 @@ const decodeToken = jwt.decode(getToken)
 
 export const API_URL = 'http://localhost:5000'
 // export const API_URL = 'https://stormy-stream-73100.herokuapp.com'
-export let userID = decodeToken ? decodeToken.id : ''
+export let userID = decodeToken ? decodeToken._id : ''
 
 export const Authorization_header = {
     headers: {
@@ -19,7 +19,7 @@ export const retrieveToken = (token) => {
         Authorization_header.headers.Authorization = `Bearer ${token}`
     }
     let decodeToken = jwt.decode(token || getToken)
-    userID = decodeToken ? decodeToken.id : ''
+    userID = decodeToken ? decodeToken._id : ''
     return {
         data: decodeToken
     }

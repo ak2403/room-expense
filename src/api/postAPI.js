@@ -33,3 +33,21 @@ export const loginUserCall = data => {
             }
         })
 }
+
+export const addGroupsCall = data => {
+    data['created_by'] = configAPI.userID
+    data.roommates.push(configAPI.userID)
+    return axios.post(`${configAPI.API_URL}/family/add`, data)
+        .then(response => {
+            return {
+                status: 200,
+                data: response.data
+            }
+        })
+        .catch(err => {
+            return {
+                status: 400,
+                error_message: err.response.data
+            }
+        })
+}
