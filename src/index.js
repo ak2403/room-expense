@@ -11,7 +11,6 @@ import Reducers from './Redux/Reducers';
 import './Style/lib.css';
 import './Style/style.css';
 
-
 library.add(faHighlighter, faEye, faCalendar, faArrowLeft, faPlus)
 
 const middleware = applyMiddleware(thunk);

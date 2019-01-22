@@ -2,6 +2,7 @@ import axios from 'axios'
 import * as configAPI from './config'
 
 export const getGroupsCall = () => {
+    console.log(configAPI.userID)
     return axios.get(`${configAPI.API_URL}/family/${configAPI.userID}`)
         .then(response => {
             return {

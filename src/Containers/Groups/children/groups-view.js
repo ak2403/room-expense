@@ -16,6 +16,7 @@ class AddGroups extends Component {
 
     renderView = () => {
         let { groups_list } = this.props
+        console.log(groups_list)
         let render_view = groups_list.map(list => {
             var convert_date = moment(list.created_on, 'YYYY/MM/DD');    
             var month = convert_date.format('MMMM');

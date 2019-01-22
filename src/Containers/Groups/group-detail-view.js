@@ -2,7 +2,10 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { withRouter, Link } from 'react-router-dom'
+import _ from 'lodash'
 import Input from '../../Components/input/text-input'
+import AddressView from '../../Components/address'
+import RentView from '../../Components/rent'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { getGroupDetail, searchMembers, addMember } from '../../Redux/Actions/groups-action'
 
@@ -58,15 +61,20 @@ class GroupDetails extends Component {
 
         return (<div className="groups-details-container">
             <div className="groups-details-header">
-                <div className="back-anchor" to='/groups'>
+            <Link to='/groups'>
+                <div className="back-anchor">
                     <FontAwesomeIcon icon="arrow-left" />
                 </div>
+                </Link>
                 <span className="group-title">{group_details.name}</span>
             </div>
 
+            {_.isEmpty(group_details) ? '' : 
             <div className="groups-content-container">
                 <div className="group-content">
+                    <AddressView data={group_details.address} />
 
+                    <RentView data={group_details.rent} />
                 </div>
                 <div className="group-members">
                     <h4>Members</h4>
@@ -76,7 +84,7 @@ class GroupDetails extends Component {
                     {showInput ? this.renderFilterMembers() : ''}
                     <FontAwesomeIcon className="add" icon="plus" onClick={this.showInput} />
                 </div>
-            </div>
+            </div>}
         </div>)
     }
 }

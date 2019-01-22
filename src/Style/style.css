@@ -18,7 +18,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #e8f2f9; }
+  background: #f5f6fa; }
+
+.theme-button {
+  background-color: #528bef;
+  padding: 8px 5px;
+  border-radius: 15px;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  width: 120px; }
 
 .container-center {
   width: 70%;
@@ -48,17 +57,18 @@ body {
   height: 100%;
   display: flex; }
   .app-container .app-nav-container {
-    width: 150px;
-    min-width: 150px;
-    max-width: 150px; }
+    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
+    border-right: 1px solid #eff0f1; }
   .app-container .app-main-container {
     display: flex;
     flex-direction: column;
     flex: 1; }
     .app-container .app-main-container .app-content-container {
       width: 98%;
-      margin: 20px;
-      padding: 20px;
+      margin: 10px 20px;
+      padding: 0 20px;
       flex: 1;
       display: flex;
       flex-direction: column;

@@ -29,6 +29,7 @@ class LoginForm extends Component {
     }
 
     render() {
+        console.log("hi")
         return (
             <React.Fragment>
                 <form onSubmit={this.onSubmit}>

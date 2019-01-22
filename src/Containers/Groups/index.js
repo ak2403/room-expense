@@ -33,7 +33,7 @@ class GroupsView extends Component {
         return (<div className="groups-container">
             <div className="groups-header">
                 <h3>Groups</h3>
-                <Button className="transparent-button" onClick={this.toggleModal} text="Add Group" />
+                <Button className="theme-button" onClick={this.toggleModal} text="Add Group" />
             </div>
 
             <div className="groups-layout">

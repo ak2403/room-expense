@@ -8,9 +8,12 @@ class AddGroups extends Component {
     state = {
         add_family: {
             name: '',
-            address: '',
-            state: '',
-            postcode: '',
+            address: {
+                street: '',
+                city: '',
+                state: '',
+                postcode: ''
+            },
             rent: '',
             roommates: []
         }
@@ -19,6 +22,14 @@ class AddGroups extends Component {
     changeValue = (key, value) => {
         let { add_family } = this.state
         add_family[key] = value
+        this.setState({
+            add_family
+        })
+    }
+
+    changeAddress = (key, value) => {
+        let { add_family } = this.state
+        add_family.address[key] = value
         this.setState({
             add_family
         })
@@ -39,11 +50,30 @@ class AddGroups extends Component {
                 text="Name of the group"
                 onChange={e => this.changeValue('name', e.target.value)} />
 
+            Address
             <Input
                 type="text"
-                value={add_family.address}
-                text="Address of the place"
-                onChange={e => this.changeValue('address', e.target.value)} />
+                value={add_family.address.street}
+                text="Street"
+                onChange={e => this.changeAddress('street', e.target.value)} />
+
+            <Input
+                type="text"
+                value={add_family.address.city}
+                text="City"
+                onChange={e => this.changeAddress('city', e.target.value)} />
+
+            <Input
+                type="text"
+                value={add_family.address.state}
+                text="State"
+                onChange={e => this.changeAddress('state', e.target.value)} />
+
+            <Input
+                type="text"
+                value={add_family.address.postcode}
+                text="Postcode"
+                onChange={e => this.changeAddress('postcode', e.target.value)} />
 
             <Input
                 type="text"
@@ -51,7 +81,7 @@ class AddGroups extends Component {
                 text="Rent of the place"
                 onChange={e => this.changeValue('rent', e.target.value)} />
 
-            <button type="submit">Create group</button>
+            <button className="theme-button" type="submit">Create group</button>
         </form>)
     }
 }

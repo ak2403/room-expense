@@ -13,7 +13,8 @@ import { retrieveCall } from '../Redux/Actions/authentication-actions';
 
 class MainRoute extends Component {
     componentDidMount = () => {
-        if (!this.props.sign_user_id) {
+        let get_token = localStorage.getItem('authToken')
+        if (get_token) {
             this.props.retrieveCall()
         }
     }
